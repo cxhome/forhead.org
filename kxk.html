@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{model.title} - {site.seo_title}</title>
+    <meta content="{site.seo_keyword}" name="keywords">
+    <meta content="{site.seo_description}" name="description">
+    <!-- Style Sheet-->
+    <link rel="stylesheet" href="<%templateskin%>/css/style.css" type="text/css" />
+    <script type='text/javascript' src="<%templateskin%>/js/jquery.min.js"></script>
+    <script type='text/javascript' src="<%templateskin%>/js/custom.js"></script>
+</head>
+<body>
+    <%template src=/_header.html/%>
+    <div class="bai location-border">
+        <div class="main location">
+            <%set (string){category_nav}=get_category_menu(channel, category_id)%>
+            <span>当前位置：</span><a href="/">首页</a><a href="#">{category_nav}</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="hui grey">
+        <div class="main">
+            
+                <div class="hui text-center one-four list-padding-right">
+                    <div class="white list-one-fourth">
+                        <div class="list-one-fourth-background"><img src="<%templateskin%>/images/cn_kxk.png" /></div>
+                        <ul>
+                            <%if {category_id}=={257}%>
+                        <li class="hover"><a href="<%linkurl("cn_kxk",257)%>"><span class="left">▶</span><span>跨学科分析框架</span><span class="right">|</span></a></li>
+                            <%else%>
+                             <li><a href="<%linkurl("cn_kxk",257)%>"><span class="left">▶</span><span>跨学科分析框架</span><span class="right">|</span></a></li>
+                            <%/if%>
+                            <%if {category_id}=={258}||{category_id}=={260}||{category_id}=={259}%>
+                        <li class="hover"><a href="<%linkurl("cn_kxk",260)%>"><span class="left">▶</span><span>学科项目</span><span class="right">|</span></a></li>
+                            <%else%>
+                            <li><a href="<%linkurl("cn_kxk",260)%>"><span class="left">▶</span><span>学科项目</span><span class="right">|</span></a></li>
+                            <%/if%>
+                            <%if {category_id}=={265}||{category_id}=={266}||{category_id}=={267}%>
+                        <li class="hover"><a href="<%linkurl("cn_kxk",266)%>"><span class="left">▶</span><span>出版物</span><span class="right">|</span></a></li>
+                            <%else%>
+                            <li><a href="<%linkurl("cn_kxk",266)%>"><span class="left">▶</span><span>出版物</span><span class="right">|</span></a></li>
+                            <%/if%>
+                            <%if {category_id}=={262}%>
+                        <li class="hover"><a href="<%linkurl("cn_circle_text",6837)%>"><span class="left">▶</span><span>科学视角</span><span class="right">|</span></a></li>
+                            <%else%>
+                             <li><a href="<%linkurl("cn_circle_text",6837)%>"><span class="left">▶</span><span>科学视角</span><span class="right">|</span></a></li>
+                            <%/if%>
+                            <%if {category_id}=={264}%>
+                            <li class="hover"><a href="<%linkurl("cn_kxk",264)%>"><span class="left">▶</span><span>数据资源</span><span class="right">|</span></a></li>
+                            <%else%>
+                            <li><a href="<%linkurl("cn_kxk",264)%>"><span class="left">▶</span><span>数据资源</span><span class="right">|</span></a></li>
+                            <%/if%>
+                           <%if {category_id}=={263}%>
+                            <li class="hover"><a href="<%linkurl("cn_kxk",264)%>"><span class="left">▶</span><span>法律法规</span><span class="right">|</span></a></li>
+                            <%else%>
+                            <li><a href="<%linkurl("cn_kxk",263)%>"><span class="left">▶</span><span>法律法规</span><span class="right">|</span></a></li>
+                            <%/if%>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                
+            
+            
+                <div class="white list-three-fourth">
+                    <div class="list-title">
+                        <h2>{model.title}</h2>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="fenlei">
+                        <div>
+                        <%if {category_id}=={265}||{category_id}=={266}||{category_id}=={267}%>
+                        <%if {category_id}=={266}%>
+                        <a class="hover" href="<%linkurl("cn_kxk",266)%>">NOG/IGO</a>
+                        <%else%>
+                        <a href="<%linkurl("cn_kxk",266)%>">NOG/IGO</a>
+                        <%/if%>
+                        <%if {category_id}=={267}%>
+                        <a class="hover" href="<%linkurl("cn_kxk",267)%>">研究文稿</a>
+                        <%else%>
+                         <a href="<%linkurl("cn_kxk",267)%>">研究文稿</a>
+                     <%/if%>
+                        <%/if%>
+
+                        <!--<%if {category_id}=={261}||{category_id}=={264}||{category_id}=={263}||{category_id}=={262}%>
+                        <%if {category_id}=={264}%>
+                        <a class="hover" href="<%linkurl("cn_kxk",264)%>">数据资源</a>
+                        <%else%>
+                        <a href="<%linkurl("cn_kxk",264)%>">数据资源</a>
+                        <%/if%>
+                        <%if {category_id}=={263}%>
+                        <a class="hover" href="<%linkurl("cn_kxk",263)%>">法律法规</a>
+                        <%else%>
+                        <a href="<%linkurl("cn_kxk",263)%>">法律法规</a>
+                        <%/if%>
+                        <%if {category_id}=={262}%>
+                        <a class="hover" href="<%linkurl("cn_kxk",262)%>">科学视角</a>
+                        <%else%>
+                         <a href="<%linkurl("cn_kxk",262)%>">科学视角</a>
+                        <%/if%>
+                        <%/if%>-->
+
+                        <%if {category_id}=={258}||{category_id}=={260}||{category_id}=={259}%>
+                        <%if {category_id}=={260}%>
+                        <a class="hover" href="<%linkurl("cn_kxk",260)%>">小额资助</a>
+                        <%else%>
+                        <a href="<%linkurl("cn_kxk",260)%>">小额资助</a>
+                        <%/if%>
+                        <%if {category_id}=={259}%>
+                        <a class="hover" href="<%linkurl("cn_kxk",259)%>">长期点</a>
+                        <%else%>
+                        <a href="<%linkurl("cn_kxk",259)%>">长期点</a>
+                        <%/if%>
+                        <%/if%>
+                            <div class="clear"></div>
+                            </div>
+                        <div class="clear"></div>
+                    </div>
+                    <ul class="list-show">
+                        {model.content}
+                        
+                        <%set (DataTable){list}=get_article_list(channel, category_id, 6, page, "status=0", out totalcount, out pagelist, "cn_kxk", category_id, "__id__")%>
+                        <%loop cdr list%>
+                            <li>
+                                <h2><a href="<%linkurl("cn_kxk_show",{cdr[id]})%>"title="{cdr[title]}">{cdr[title]}</a><span class="time"><%datetostr({cdr[add_time]},yyyy-MM-dd)%></span></h2>
+                                <div class="clear"></div>
+                                <%if {cdr[img_url]}==""%>
+                                    <div class="book-image" style="display:none"><img src="{cdr[img_url]}" /></div>
+                                <%else%>
+                                    <div class="book-image"><img src="{cdr[img_url]}" /></div>
+                                <%/if%>
+                                <p><span>摘要：</span><%cutstring({cdr[zhaiyao]},180)%></p>
+                                <div class="clear"></div>
+                            </li>
+                        <%/loop%>
+                        
+                    </ul>
+                    <div class="pagenum text-center">
+                        {pagelist}
+                    </div>
+                </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <%template src=/_footer.html/%>
+</body>
+</html>

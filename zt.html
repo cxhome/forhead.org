@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>研究专题-{site.seo_title}</title>
+    <meta content="{site.seo_keyword}" name="keywords">
+    <meta content="{site.seo_description}" name="description">
+    <!-- Style Sheet-->
+    <link rel="stylesheet" href="<%templateskin%>/css/style.css" type="text/css" />
+    <script type='text/javascript' src="<%templateskin%>/js/jquery.min.js"></script>
+    <script type='text/javascript' src="<%templateskin%>/js/custom.js"></script>
+    
+</head>
+<body>
+    <%template src=/_header.html/%>
+    <div class="bai">
+        <div class="main location">
+            <span>当前位置：</span><a href="/">首页</a><span>></span><a href="<%linkurl("cn_special",1,1)%>">研究专题</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="hui grey">
+        <div class="main">
+            <div class="hui text-center one-four list-padding-right">
+                    <div class="white list-one-fourth">
+                        <div class="list-one-fourth-background"><img src="<%templateskin%>/images/cn_special.png" /></div>
+                        <ul>
+                            <%if {category_id}=={265}||{category_id}=={266}||{category_id}=={267}%>
+                            <li class="hover"><a href="<%linkurl("cn_kxk",266)%>"><span class="left">▶</span><span>出版物</span><span class="right">|</span></a></li>
+                            <%else%>
+                            <li><a href="<%linkurl("cn_kxk",266)%>"><span class="left">▶</span><span>出版物</span><span class="right">|</span></a></li>
+                            <%/if%>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            <div class="white list-three-fourth">
+                <div class="expert-title-one about-title">
+                    <p>健康、环境与发展论坛专题</p>
+                </div>
+                {model.content}
+                <div class="topic-list">
+                    <%set (DataTable){list}=get_article_list("cn_special",180,7,"is_top=1")%>
+                    <%loop dr list%>
+                        <div class="topic">
+                            <div class="special_title_img"><img class="height-241" src="{dr[img_url]}" /></div>
+                            <div class="topic-text text-center">
+                                <h2>{dr[title]}</h2>
+                                <p><%cutstring({dr[zhaiyao]},40)%></p>
+                            </div>
+                            <div class="look-topic text-center">
+                                <a href="<%linkurl("cn_special_show",{dr[id]})%>">查看专题</a>
+                            </div>
+                        </div>
+                    <%/loop%>
+                    <div class="clear"></div>
+                </div>
+                
+    </div>
+               
+            <div>
+            <div class="clear"></div>
+        </div>
+    </div>
+        </div>
+
+    <%template src=/_footer.html/%>
+</body>
+</html>
